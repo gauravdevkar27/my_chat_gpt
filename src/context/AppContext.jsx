@@ -17,17 +17,28 @@ export const AppContextProvider = ({ children }) => {
     const [selectedChat, setSelectedChat] = useState(null);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
+
+    // This function simulates fetching user data. 
+    // Instead of making a real API call, it sets 
+    // the user state with dummyUserData imported from your assets.
+
     const fetchUser = async () => {
-        setUser(dummyUserData)
+        setUser(dummyUserData)   
     }
+
+    // This function simulates fetching the user's chat history.
+    //  It sets the chats state with dummyChats and sets the selectedChat 
+    // // to be the first chat in that dummy list.
 
     const fetchUsersChats = () =>{
-        setChats(dummyChats)
+        setChats(dummyChats)         
         setSelectedChat(dummyChats[0])
     }
+    //Theme Management: This effect runs whenever the 
+    // theme state changes
 
-    useEffect(() => {
-        if (theme === 'dark') {
+    useEffect(() => {        
+        if (theme === 'dark') {      //If the theme is 'dark', it adds the dark class to the main <html> element of your document. This is a common pattern for applying dark mode styles with Tailwind CSS.
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
@@ -35,6 +46,8 @@ export const AppContextProvider = ({ children }) => {
         localStorage.setItem('theme', theme);
     }, [theme])
 
+    //Chat Fetching: This effect runs whenever the user state changes
+    
     useEffect(()=>{
         if(user){
             fetchUsersChats()
