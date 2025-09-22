@@ -33,6 +33,7 @@ export const AppContextProvider = ({ children }) => {
     const fetchUsersChats = () =>{
         setChats(dummyChats)         
         setSelectedChat(dummyChats[0])
+        //setSelectedChat(dummyChats[1])
     }
     //Theme Management: This effect runs whenever the 
     // theme state changes
