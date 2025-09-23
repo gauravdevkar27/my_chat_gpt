@@ -5,6 +5,7 @@ import ChatBox from './component/ChatBox'
 import Credit from './pages/Credit'
 import Community from './pages/Community'
 import { assets } from './main_assets/assets'
+import './main_assets/prism.css'
 function App() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
