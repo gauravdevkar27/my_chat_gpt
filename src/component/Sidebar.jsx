@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { assets } from '../main_assets/assets'
 import moment from 'moment'
+
 const Sidebar = ({isMenuOpen, setIsMenuOpen}) => {
   const { navigate, chats, setSelectedChat, theme, setTheme, user } = useAppContext()
   const [search, setSearch] = useState('');
@@ -62,7 +63,7 @@ const Sidebar = ({isMenuOpen, setIsMenuOpen}) => {
 
       {/* community img*/}
       <div onClick={() => {navigate('/community'); setIsMenuOpen(false)}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300
-      dark:border-white/15 rounded-md cursor-pointer hover:scale-13 trasition-all'>
+      dark:border-white/15 rounded-md cursor-pointer hover:scale-105 transition-all'>
         <img src={assets.gallery_icon} className='w-4.5 not-dark:invert' alt='' />
         <div className='flex flex-col text-sm'>
           <p>Community Images</p>
@@ -71,7 +72,7 @@ const Sidebar = ({isMenuOpen, setIsMenuOpen}) => {
 
       {/* Credit purchase option*/}
       <div onClick={() => {navigate('/credits'); setIsMenuOpen(false)}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300
-      dark:border-white/15 rounded-md cursor-pointer hover:scale-13 trasition-all'>
+      dark:border-white/15 rounded-md cursor-pointer hover:scale-105 transition-all'>
         <img src={assets.diamond_icon} className='w-4.5 not-dark:invert' alt='' />
         <div className='flex flex-col text-sm'>
           <p>Credits : {user?.credits}</p>
